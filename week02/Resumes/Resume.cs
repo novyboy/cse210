@@ -1,5 +1,13 @@
 using System;
+/*
+Class: Resume
+Attributes:
+* name : string
+* jobs : List<Job>
 
+Behaviors:
+* Display() : void
+*/
 public class Resume
 {
 	public string _name = "";

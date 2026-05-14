@@ -1,5 +1,15 @@
 using System;
+/*
+Class: Job
+Attributes:
+* company : string
+* jobTitle : string
+* startYear : int
+* endYear : int
 
+Behaviors:
+* Display() : void
+*/
 public class Job
 {
 	public string _company = "";
