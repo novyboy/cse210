@@ -11,7 +11,7 @@ class Program
             Console.Write("Enter number: ");
             string userInput = Console.ReadLine() ?? "0";
             number = int.Parse(userInput);
-            numbers.Add(number);
+            if (number != 0) numbers.Add(number);
         } while (number != 0);
         
         numbers.Sort();
