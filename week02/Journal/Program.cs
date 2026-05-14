@@ -1,3 +1,5 @@
+/* used json to load and save journal */
+
 using System;
 
 class Program
