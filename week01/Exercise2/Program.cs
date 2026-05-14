@@ -7,19 +7,19 @@ class Program
         Console.Write("What is your grade? ");
         string userInput = Console.ReadLine() ?? "0";
         int grade = int.Parse(userInput);
-        string letterGrade = "F";
+        string letter = "F";
         bool minus = true;
         bool plus = true;
         string sign = "";
         if (grade >= 90) {
-            letterGrade = "A";
+            letter = "A";
             plus = false;
         } else if (grade >= 80) {
-            letterGrade = "B";
+            letter = "B";
         } else if (grade >= 70) {
-            letterGrade = "C";
+            letter = "C";
         } else if (grade >= 60) {
-            letterGrade = "D";
+            letter = "D";
         } else {
             plus = false;
             minus = false;
@@ -31,6 +31,11 @@ class Program
         else if (minus && small < 3) {
             sign = "-";
         }
-        Console.WriteLine($"Your letter grade is an {letterGrade}{sign}");
+        Console.WriteLine($"Your letter grade is an {letter}{sign}");
+        if (grade >= 70) {
+            Console.WriteLine($"Congratulations on passing your class!");
+        } else {
+            Console.WriteLine($"Do better next time.");
+        }
     }
 }
