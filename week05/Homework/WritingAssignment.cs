@@ -1,0 +1,22 @@
+using System;
+/*
+Class: Writing Assignment
+Attributes:
+* title : string
+
+Behaviors:
+* GetWritingInformation() : string
+*/
+public class WritingAssignment : Assignment
+{
+	private string _title;
+
+	public WritingAssignment(string studentName, string topic, string title) : base(studentName, topic)
+	{
+		_title = title;
+	}
+	public string GetWritingInformation()
+	{
+		return $"{base.GetSummary()}\n{_title} by {base._studentName}";
+	}
+}
