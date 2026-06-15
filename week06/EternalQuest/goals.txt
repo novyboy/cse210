@@ -1,2 +1,4 @@
-SimpleGoal,Nova,Cool,100
-ChecklistGoal,Check,k,100,2,5,10
+10
+SimpleGoal,SIMPLE,,10,True
+ChecklistGoal,CHECKLIST,,100,10,50,0
+EternalGoal,ETERNAL,,1000

@@ -1,3 +1,5 @@
+//added check to checklistgoal upon 100% completion of task
+
 using System;
 
 class Program

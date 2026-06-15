@@ -140,20 +140,25 @@ public class GoalManager
 		string filename = "goals.txt";
 		
 		List<string> goals = File.ReadAllText(filename).Split('\n').ToList();
-		goals.Add($"{_score}");
-		
+		_goals.Clear();
 		foreach (string goal in goals) {
-			List<string> splitGoal = goal.Split(',').ToList();
-			
-			if (splitGoal[0] == "SimpleGoal") {
-				SimpleGoal simpleGoal = new SimpleGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]));
-				_goals.Add(simpleGoal);
-			} else if (splitGoal[0] == "ChecklistGoal") {
-				ChecklistGoal checklistGoal = new ChecklistGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]), int.Parse(splitGoal[4]), int.Parse(splitGoal[5]));
-				_goals.Add(checklistGoal);
-			} else if (splitGoal[0] == "EternalGoal") {
-				EternalGoal eternalGoal = new EternalGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]));
-				_goals.Add(eternalGoal);
+			bool isInt = int.TryParse(goal, out _);
+
+			if (isInt && !string.IsNullOrWhiteSpace(goal)) {
+				_score = int.Parse(goal);
+			} else {
+				List<string> splitGoal = goal.Split(',').ToList();
+				
+				if (splitGoal[0] == "SimpleGoal") {
+					SimpleGoal simpleGoal = new SimpleGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]), splitGoal[4] == "True");
+					_goals.Add(simpleGoal);
+				} else if (splitGoal[0] == "ChecklistGoal") {
+					ChecklistGoal checklistGoal = new ChecklistGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]), int.Parse(splitGoal[4]), int.Parse(splitGoal[5]), int.Parse(splitGoal[6]));
+					_goals.Add(checklistGoal);
+				} else if (splitGoal[0] == "EternalGoal") {
+					EternalGoal eternalGoal = new EternalGoal(splitGoal[1], splitGoal[2], int.Parse(splitGoal[3]));
+					_goals.Add(eternalGoal);
+				}
 			}
 		};
 		
