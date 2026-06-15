@@ -1,0 +1,42 @@
+using System;
+/*
+Class: Goal
+Attributes:
+* shortName : string
+* description : string
+* points : string
+
+Behaviors:
+* RecordEvent() : void
+* IsComplete() : bool
+* GetDetailsString() : string
+* GetStringRepresentation() : string
+*/
+public abstract class Goal
+{
+	protected string _shortName;
+	protected string _description;
+	protected int _points;
+
+	public Goal(string name, string description, int points)
+	{
+		_shortName = name;
+		_description = description;
+		_points = points;
+	}
+	public abstract int RecordEvent();
+	
+	public abstract bool IsComplete();
+	
+	public string GetShortName() {
+		return _shortName;
+	}
+	public virtual string GetDetailsString() {
+		if (IsComplete()) {
+			return $"☑ {_shortName} {_description}";
+		} else {
+			return $"☐ {_shortName} {_description}";
+		}
+	}
+	public abstract string GetStringRepresentation();
+}

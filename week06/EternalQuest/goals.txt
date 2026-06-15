@@ -1,0 +1,2 @@
+SimpleGoal,Nova,Cool,100
+ChecklistGoal,Check,k,100,2,5,10

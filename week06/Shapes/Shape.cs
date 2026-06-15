@@ -6,7 +6,7 @@ Attributes:
 
 Behaviors:
 * GetColor() : string
-* SetColor() : string
+* SetColor() : void
 */
 public abstract class Shape
 {
