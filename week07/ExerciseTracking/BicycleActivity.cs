@@ -18,7 +18,7 @@ public class BicycleActivity : Activity
 		_speed = speed;
 	}
 	public override double GetDistance() {
-		return GetSpeed() / 60 * base.GetDuration();
+		return GetSpeed() * (base.GetDuration()/60);
 	}
 	public override double GetSpeed() {
 		return _speed;
