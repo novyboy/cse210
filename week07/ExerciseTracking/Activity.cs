@@ -33,6 +33,6 @@ public abstract class Activity
 	public abstract double GetPace();
 	
 	public string GetSummary() {
-		return $"{_date} {_name} ({_duration}): Distance: {GetDistance()} Speed: {GetSpeed()} Pace: {GetPace()}";
+		return $"{_date} {_name} ({_duration}min): Distance: {GetDistance()} Speed: {GetSpeed()} Pace: {GetPace()}";
 	}
 }
